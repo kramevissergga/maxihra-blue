@@ -2952,7 +2952,7 @@
         scrollWatcherCallback(entry, observer) {
             const targetElement = entry.target;
             this.scrollWatcherIntersecting(entry, targetElement);
-            targetElement.hasAttribute("data-watch-once") && entry.isIntersecting ? this.scrollWatcherOff(targetElement, observer) : null;
+            if (entry.isIntersecting) this.scrollWatcherOff(targetElement, observer);
             document.dispatchEvent(new CustomEvent("watcherCallback", {
                 detail: {
                     entry
@@ -3024,6 +3024,9 @@
     }
     window.addEventListener("load", (function() {
         updateHeaderHeights();
+        setTimeout((() => {
+            window.scrollTo(0, 0);
+        }), 10);
     }));
     window.addEventListener("resize", updateHeaderHeights);
     document.addEventListener("click", (e => {
@@ -3037,7 +3040,6 @@
             document.documentElement.classList.remove("menu-open");
         }
     }));
-    window.scrollTo(0, 0);
     window["FLS"] = false;
     pageNavigation();
 })();
