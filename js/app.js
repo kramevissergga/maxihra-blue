@@ -3037,6 +3037,7 @@
             document.documentElement.classList.remove("menu-open");
         }
     }));
+    window.scrollTo(0, 0);
     window["FLS"] = false;
     pageNavigation();
 })();
