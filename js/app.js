@@ -2952,7 +2952,7 @@
         scrollWatcherCallback(entry, observer) {
             const targetElement = entry.target;
             this.scrollWatcherIntersecting(entry, targetElement);
-            if (entry.isIntersecting) this.scrollWatcherOff(targetElement, observer);
+            targetElement.hasAttribute("data-watch-once") && entry.isIntersecting ? this.scrollWatcherOff(targetElement, observer) : null;
             document.dispatchEvent(new CustomEvent("watcherCallback", {
                 detail: {
                     entry
@@ -3024,9 +3024,6 @@
     }
     window.addEventListener("load", (function() {
         updateHeaderHeights();
-        setTimeout((() => {
-            window.scrollTo(0, 0);
-        }), 100);
     }));
     window.addEventListener("resize", updateHeaderHeights);
     document.addEventListener("click", (e => {
