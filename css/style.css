@@ -290,6 +290,7 @@ body {
 .benefits__image,
 .benefits__item,
 .benefits__link,
+.benefits__text,
 .benefits__title,
 .block-title,
 .for-whom__item,
@@ -321,6 +322,7 @@ body {
 ._watcher-view.benefits__image,
 ._watcher-view.benefits__item,
 ._watcher-view.benefits__link,
+._watcher-view.benefits__text,
 ._watcher-view.benefits__title,
 ._watcher-view.block-title,
 ._watcher-view.for-whom__item,
@@ -724,16 +726,7 @@ body {
 }
 .benefits__text {
   text-align: center;
-  line-height: 1.25;
-  transition: all .3s ease;
-  opacity: 0;
-  -webkit-transform: translateY(15%);
-  transform: translateY(15%)
-}
-.benefits__text._watcher-view {
-  opacity: 1;
-  -webkit-transform: none;
-  transform: none
+  line-height: 1.25
 }
 .benefits__body {
   display: flex;

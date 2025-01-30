@@ -3024,7 +3024,9 @@
     }
     window.addEventListener("load", (function() {
         updateHeaderHeights();
-        window.scrollTo(0, 0);
+        setTimeout((() => {
+            window.scrollTo(0, 0);
+        }), 100);
     }));
     window.addEventListener("resize", updateHeaderHeights);
     document.addEventListener("click", (e => {
