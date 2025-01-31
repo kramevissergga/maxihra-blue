@@ -314,7 +314,9 @@ body {
 .when__item,
 .when__link,
 .when__text {
-  transition: all .5s ease;
+  transition: opacity .5s ease,-webkit-transform .5s ease;
+  transition: transform .5s ease,opacity .5s ease;
+  transition: transform .5s ease,opacity .5s ease,-webkit-transform .5s ease;
   opacity: 0;
   -webkit-transform: translateY(3.125em);
   transform: translateY(3.125em)

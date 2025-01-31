@@ -2919,8 +2919,15 @@
         setTimeout((() => {
             window.scrollTo(0, 0);
         }), 10);
-        document.querySelectorAll("[data-watch]").forEach((element => {
-            element.classList.add("_watcher-view");
+    }));
+    document.addEventListener("DOMContentLoaded", (event => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils.toArray("[data-watch]").forEach((element => {
+            ScrollTrigger.create({
+                trigger: element,
+                start: "center bottom",
+                onEnter: () => element.classList.add("_watcher-view")
+            });
         }));
     }));
     window.addEventListener("resize", updateHeaderHeights);
