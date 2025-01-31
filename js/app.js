@@ -2960,7 +2960,9 @@
             }));
         }
     }
-    modules_flsModules.watcher = new ScrollWatcher({});
+    document.addEventListener("DOMContentLoaded", (() => {
+        modules_flsModules.watcher = new ScrollWatcher({});
+    }));
     let addWindowScrollEvent = false;
     function pageNavigation() {
         document.addEventListener("click", pageNavigationAction);

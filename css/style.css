@@ -594,7 +594,7 @@ body {
   z-index: 50;
   font-size: .9375rem
 }
-.page {
+.page-home {
   padding-top: var(--header-height)
 }
 .hero {
@@ -1717,6 +1717,9 @@ body {
     -moz-column-gap: 1.875rem;
     column-gap: 1.875rem
   }
+  .page-home__when:not(:last-child) {
+    margin-bottom: 9.625rem
+  }
   .hero__title {
     font-size: 4.625rem
   }
@@ -1782,9 +1785,6 @@ body {
   }
   .solution__image span {
     font-size: 6.5625rem
-  }
-  .page__when:not(:last-child) {
-    margin-bottom: 9.625rem
   }
   .when {
     padding-top: 2.5rem
@@ -2219,6 +2219,9 @@ body {
   }
 }
 @media (max-width:27.5em) {
+  .page-home__when:not(:last-child) {
+    margin-bottom: 4.375rem
+  }
   .hero__title {
     font-size: 2.4375rem
   }
@@ -2282,9 +2285,6 @@ body {
   .solution__image span {
     font-size: 2.9375rem
   }
-  .page__when:not(:last-child) {
-    margin-bottom: 4.375rem
-  }
   .when {
     padding-top: 3.8125rem
   }
@@ -2343,19 +2343,17 @@ body {
     }
   }
 }
-@media (min-width:20em)and (max-width:47.99875em) {
-  @supports (min-height:clamp(36.1875rem ,32.1694634805rem + 20.0901825974vw ,41.8125rem)) {
-    .hero {
-      min-height: clamp(36.1875rem ,32.1694634805rem + 20.0901825974vw ,41.8125rem)
-    }
-  }
-  @supports not (min-height:clamp(36.1875rem ,32.1694634805rem + 20.0901825974vw ,41.8125rem)) {
-    .hero {
-      min-height: calc(36.1875rem + 5.625*(100vw - 20rem)/ 27.99875)
-    }
-  }
-}
 @media (min-width:27.5em)and (max-width:86.125em) {
+  @supports (margin-bottom:clamp(4.375rem ,1.9123134328rem + 8.9552238806vw ,9.625rem)) {
+    .page-home__when:not(:last-child) {
+      margin-bottom: clamp(4.375rem ,1.9123134328rem + 8.9552238806vw ,9.625rem)
+    }
+  }
+  @supports not (margin-bottom:clamp(4.375rem ,1.9123134328rem + 8.9552238806vw ,9.625rem)) {
+    .page-home__when:not(:last-child) {
+      margin-bottom: calc(4.375rem + 5.25*(100vw - 27.5rem)/ 58.625)
+    }
+  }
   @supports (font-size:clamp(2.4375rem ,1.411380597rem + 3.7313432836vw ,4.625rem)) {
     .hero__title {
       font-size: clamp(2.4375rem ,1.411380597rem + 3.7313432836vw ,4.625rem)
@@ -2566,16 +2564,6 @@ body {
       font-size: calc(2.9375rem + 3.625*(100vw - 27.5rem)/ 58.625)
     }
   }
-  @supports (margin-bottom:clamp(4.375rem ,1.9123134328rem + 8.9552238806vw ,9.625rem)) {
-    .page__when:not(:last-child) {
-      margin-bottom: clamp(4.375rem ,1.9123134328rem + 8.9552238806vw ,9.625rem)
-    }
-  }
-  @supports not (margin-bottom:clamp(4.375rem ,1.9123134328rem + 8.9552238806vw ,9.625rem)) {
-    .page__when:not(:last-child) {
-      margin-bottom: calc(4.375rem + 5.25*(100vw - 27.5rem)/ 58.625)
-    }
-  }
   @supports (padding-top:clamp(2.5rem ,4.4281716418rem + -2.2388059701vw ,3.8125rem)) {
     .when {
       padding-top: clamp(2.5rem ,4.4281716418rem + -2.2388059701vw ,3.8125rem)
@@ -2644,6 +2632,18 @@ body {
   @supports not (margin-bottom:clamp(2rem ,0.973880597rem + 3.7313432836vw ,4.1875rem)) {
     .product__block:not(:last-child) {
       margin-bottom: calc(2rem + 2.1875*(100vw - 27.5rem)/ 58.625)
+    }
+  }
+}
+@media (min-width:20em)and (max-width:47.99875em) {
+  @supports (min-height:clamp(36.1875rem ,32.1694634805rem + 20.0901825974vw ,41.8125rem)) {
+    .hero {
+      min-height: clamp(36.1875rem ,32.1694634805rem + 20.0901825974vw ,41.8125rem)
+    }
+  }
+  @supports not (min-height:clamp(36.1875rem ,32.1694634805rem + 20.0901825974vw ,41.8125rem)) {
+    .hero {
+      min-height: calc(36.1875rem + 5.625*(100vw - 20rem)/ 27.99875)
     }
   }
 }
