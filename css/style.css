@@ -595,7 +595,18 @@ body {
   font-size: .9375rem
 }
 .page-home {
+  position: relative;
   padding-top: var(--header-height)
+}
+.page-home__hero {
+  z-index: 1
+}
+.page-home__benefits,
+.page-home__for-whom,
+.page-home__when {
+  z-index: 10;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0)
 }
 .hero {
   position: sticky;
