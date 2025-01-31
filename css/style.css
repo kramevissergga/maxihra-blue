@@ -604,15 +604,13 @@ body {
 .page-home__benefits,
 .page-home__for-whom,
 .page-home__when {
-  position: sticky;
+  position: relative;
   z-index: 99!important;
   transform: translate3d(0,0,0);
   -webkit-transform: translate3d(0,0,0)
 }
 .hero {
-  position: sticky;
-  top: var(--header-height);
-  left: 0;
+  position: relative;
   display: flex;
   padding-top: 5rem;
   padding-bottom: 1.5rem
