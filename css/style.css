@@ -606,18 +606,28 @@ body {
 .page-home__when {
   position: relative;
   z-index: 99!important;
-  transform: translate3d(0,0,0);
-  -webkit-transform: translate3d(0,0,0);
-  backface-visibility: hidden;
-  perspective: 1000;
-  -webkit-backface-visibility: hidden;
-  -webkit-perspective: 1000
+  -webkit-animation-name: forceRedraw;
+  animation-name: forceRedraw;
+  -webkit-animation-duration: 4s;
+  animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite
 }
-.page-home__benefits *,
-.page-home__for-whom *,
-.page-home__when * {
-  transform: translate3d(0,0,0);
-  -webkit-transform: translate3d(0,0,0)
+@-webkit-keyframes forceRedraw {
+  from {
+    box-shadow: inset transparent 0 0 0
+  }
+  to {
+    box-shadow: inset rgba(0,0,0,.0000001) 0 0 0 10px
+  }
+}
+@keyframes forceRedraw {
+  from {
+    box-shadow: inset transparent 0 0 0
+  }
+  to {
+    box-shadow: inset rgba(0,0,0,.0000001) 0 0 0 10px
+  }
 }
 .hero {
   position: relative;
@@ -720,7 +730,7 @@ body {
 .benefits,
 .for-whom,
 .when {
-  background-color: #4b46b1
+  background: linear-gradient(180deg,#4b46b1 0,#242259 100%)
 }
 .benefits__header {
   max-width: 50.8125rem;
